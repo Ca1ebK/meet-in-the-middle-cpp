@@ -27,6 +27,30 @@ Any tests that you define in the `tests/` directory must have a corresponding en
 
 The `main.cpp` file at the root of the project must have a corresponding entry in `CMakeLists.txt`. After you build executables using CMake, you can run the driver program from within the `build/` directory.
 
+### Median Calculator
+
+This project implements a median calculator that reads pre-sorted integers from a CSV file and calculates their median value. The program uses a custom dynamic array implementation without relying on standard library containers like `vector` or `array`.
+
+After building with CMake, run the program:
+
+```bash
+./median
+```
+
+The program will prompt you to enter a filename. You can use one of the provided test files:
+- `data.csv` - 11 elements, median should be 11
+- `data_even.csv` - 6 elements, median should be 17.5
+- `data_single.csv` - 1 element, median should be 42
+
+Example usage:
+```
+Enter the filename: ../data.csv
+
+The median of the dataset is 11.
+```
+
+Note: When running from the `build/` directory, you need to use `../` to access files in the parent directory.
+
 ## Running Benchmarks
 
 Benchmarking is provided with Catch2. You can write benchmarking assertions alongside test assertions right in your test files.
